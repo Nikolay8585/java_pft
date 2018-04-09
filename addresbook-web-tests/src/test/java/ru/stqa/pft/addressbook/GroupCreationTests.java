@@ -38,10 +38,6 @@ public class GroupCreationTests {
         wd.findElement(By.name("new")).click();
         wd.findElement(By.name("group_name")).click();
         wd.findElement(By.name("group_name")).clear();
-        wd.findElement(By.name("group_name")).sendKeys("testq");
-        wd.findElement(By.name("group_header")).click();
-        wd.findElement(By.name("group_name")).click();
-        wd.findElement(By.name("group_name")).clear();
         wd.findElement(By.name("group_name")).sendKeys("test1");
         wd.findElement(By.name("group_header")).click();
         wd.findElement(By.name("group_header")).clear();
