@@ -17,7 +17,7 @@ public class CotactCreationTest {
     public void setUp() throws Exception {
         wd = new FirefoxDriver(new FirefoxOptions().setLegacy(true));
         wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-        wd.get("http://localhost/addressbook/edit.php");
+        wd.get("http://localhost/addressbook/");
         login("admin", "secret");
     }
 
@@ -46,10 +46,10 @@ public class CotactCreationTest {
     private void fillContactForm(ContactData contactData) {
         wd.findElement(By.name("firstname")).click();
         wd.findElement(By.name("firstname")).clear();
-        wd.findElement(By.name("firstname")).sendKeys(contactData.getFirstname());
+        wd.findElement(By.name("firstname")).sendKeys(contactData.getFirstName());
         wd.findElement(By.name("lastname")).click();
         wd.findElement(By.name("lastname")).clear();
-        wd.findElement(By.name("lastname")).sendKeys(contactData.getLastname());
+        wd.findElement(By.name("lastname")).sendKeys(contactData.getLastName());
         wd.findElement(By.name("home")).click();
         wd.findElement(By.name("home")).clear();
         wd.findElement(By.name("home")).sendKeys(contactData.getPhoneHome());

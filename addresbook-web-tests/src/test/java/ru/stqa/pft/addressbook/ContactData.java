@@ -1,22 +1,22 @@
 package ru.stqa.pft.addressbook;
 
 public class ContactData {
-    private final String firstname;
-    private final String lastname;
+    private final String firstName;
+    private final String lastName;
     private final String phoneHome;
 
-    public ContactData(String firstname, String lastname, String phoneHome) {
-        this.firstname = firstname;
-        this.lastname = lastname;
+    public ContactData(String firstName, String lastName, String phoneHome) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.phoneHome = phoneHome;
     }
 
-    public String getFirstname() {
-        return firstname;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public String getLastname() {
-        return lastname;
+    public String getLastName() {
+        return lastName;
     }
 
     public String getPhoneHome() {
