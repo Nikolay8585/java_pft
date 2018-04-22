@@ -7,6 +7,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
+import ru.stqa.pft.addressbook.tests.ContactDeletionTests;
 
 public class ContactHelper extends HelperBase {
     public ContactHelper(WebDriver wd) {
@@ -34,7 +35,7 @@ public class ContactHelper extends HelperBase {
         click(By.name("selected[]"));
     }
 
-    public void initContactCreation() {
+    public void initContactModification() {
         click(By.xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img"));
     }
 
@@ -44,5 +45,19 @@ public class ContactHelper extends HelperBase {
 
     public void initContactDeletion() {
         click(By.xpath("//div[@id='content']/form[2]/div[2]/input"));
+    }
+
+    public void createContact(ContactData contact) {
+        fillContactForm(contact, true);
+        submitContactCreation();
+    }
+
+    public boolean isThereAContact() {
+            return isElementPresent(By.name("selected[]"));
+    }
+
+    public void modifyContact(ContactData contact) {
+        fillContactForm(contact, false);
+        submitContactModification();
     }
 }
