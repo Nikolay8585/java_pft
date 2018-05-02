@@ -1,6 +1,7 @@
 package ru.stqa.pft.addressbook.tests;
 
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.ContactData;
 
@@ -10,8 +11,8 @@ import java.util.List;
 
 public class ContactModificationTests extends TestBase {
 
-    @Test (enabled = true)
-    public void testContactModification() {
+    @BeforeMethod
+    public void ensurePrecondition() {
         app.goTo().gotoHome();
         if (! app.getContactHelper().isThereAContact()) {
             app.goTo().gotoAddNew();
@@ -19,6 +20,11 @@ public class ContactModificationTests extends TestBase {
                     new ContactData("Sasha", "Pushkin", "333", "SP@mail.ru", "[none]"));
             app.goTo().gotoHome();
         }
+    }
+
+    @Test (enabled = false)
+    public void testContactModification() {
+
         List<ContactData> before = app.getContactHelper().getContactList();
         app.getContactHelper().selectContact(before.size() - 1);
         app.getContactHelper().initContactModification(before.size() - 1);
