@@ -71,7 +71,6 @@ public class ContactHelper extends HelperBase {
         allertConfirm();
     }
 
-
     public Contacts all() {
         Contacts contacts = new Contacts();
         List<WebElement> elements = wd.findElements(By.name("entry"));
@@ -83,6 +82,5 @@ public class ContactHelper extends HelperBase {
         }
         return contacts;
     }
-
 
 }
