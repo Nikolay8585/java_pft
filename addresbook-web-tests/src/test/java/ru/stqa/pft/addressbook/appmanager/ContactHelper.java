@@ -78,9 +78,22 @@ public class ContactHelper extends HelperBase {
             int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
             String lastName = element.findElements(By.tagName("td")).get(1).getText();
             String firstName = element.findElements(By.tagName("td")).get(2).getText();
-            contacts.add(new ContactData().withId(id).withFirstName(firstName).withLastName(lastName));
+            String allPhones = element.findElements(By.tagName("td")).get(5).getText();
+            contacts.add(new ContactData().withId(id).withFirstName(firstName).withLastName(lastName)
+            .withAllPhones(allPhones));
         }
         return contacts;
     }
 
+    public ContactData infoFromEditForm(ContactData contact) {
+        initContactModification(contact.getId());
+        String firstName = wd.findElement(By.name("firstname")).getAttribute("value");
+        String lastName = wd.findElement(By.name("lastname")).getAttribute("value");
+        String phoneHome = wd.findElement(By.name("home")).getAttribute("value");
+        String phoneMobile = wd.findElement(By.name("mobile")).getAttribute("value");
+        String phoneWork = wd.findElement(By.name("work")).getAttribute("value");
+        return new ContactData().withId(contact.getId()).withFirstName(firstName).withLastName(lastName)
+                .withPhoneHome(phoneHome).withPhoneMobile(phoneMobile).withPhoneWork(phoneWork);
+
+    }
 }
