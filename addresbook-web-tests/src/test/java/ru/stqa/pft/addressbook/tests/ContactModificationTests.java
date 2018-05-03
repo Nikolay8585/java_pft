@@ -20,7 +20,7 @@ public class ContactModificationTests extends TestBase {
             app.goTo().addNewPage();
             app.contact().create(
                     new ContactData().withFirstName("Sasha").withLastName("Pushkin")
-                            .withPhoneHome("333").witheMail("SP@mail.ru").withGroup("[none]"));
+                            .withPhoneHome("333").withEMail("SP@mail.ru").withGroup("[none]"));
             app.goTo().homePage();
         }
     }
@@ -31,7 +31,7 @@ public class ContactModificationTests extends TestBase {
         Contacts before = app.contact().all();
         ContactData modifiedContact = before.iterator().next();
         ContactData contact = new ContactData().withId(modifiedContact.getId()).withFirstName("John").withLastName("Sylver")
-                .withPhoneHome("555").witheMail("JS@mail.ru");
+                .withPhoneHome("555").withEMail("JS@mail.ru");
         app.contact().modify(contact);
         app.goTo().homePage();
         Contacts after = app.contact().all();

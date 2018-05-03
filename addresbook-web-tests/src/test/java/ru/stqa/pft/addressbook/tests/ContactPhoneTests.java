@@ -21,7 +21,7 @@ public class ContactPhoneTests extends TestBase {
             app.goTo().addNewPage();
             app.contact().create(
                     new ContactData().withFirstName("Sasha").withLastName("Pushkin")
-                            .withPhoneHome("333").withPhoneWork("+7(812)55-55").witheMail("SP@mail.ru").withGroup("[none]"));
+                            .withPhoneHome("333").withPhoneWork("+7(812)55-55").withEMail("SP@mail.ru").withGroup("[none]"));
             app.goTo().homePage();
         }
     }
@@ -33,6 +33,8 @@ public class ContactPhoneTests extends TestBase {
         ContactData contactInfoFromEditForm = app.contact().infoFromEditForm(contact);
 
         assertThat(contact.getAllPhones(), equalTo(mergePhones(contactInfoFromEditForm)));
+        assertThat(contact.getEMail(), equalTo(contactInfoFromEditForm.getEMail()));
+        assertThat(contact.getAddress(), equalTo(contactInfoFromEditForm.getAddress()));
     }
 
     private String mergePhones(ContactData contact) {
