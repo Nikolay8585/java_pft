@@ -114,16 +114,13 @@ public class ContactData {
         ContactData that = (ContactData) o;
         return id == that.id &&
                 Objects.equals(firstName, that.firstName) &&
-                Objects.equals(lastName, that.lastName) &&
-                Objects.equals(address, that.address) &&
-                Objects.equals(eMail, that.eMail) &&
-                Objects.equals(allPhones, that.allPhones);
+                Objects.equals(lastName, that.lastName);
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(id, firstName, lastName, address, eMail, allPhones);
+        return Objects.hash(id, firstName, lastName);
     }
 
     @Override
