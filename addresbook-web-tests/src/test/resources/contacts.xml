@@ -1,0 +1,35 @@
+<list>
+  <contact>
+    <firstName>Johnny 0</firstName>
+    <lastName>Robot 0</lastName>
+    <address>Nevsky 0</address>
+    <eMail>john0@mail.ru</eMail>
+    <eMail2>john0@mail.ru2</eMail2>
+    <eMail3>john0@mail.ru3</eMail3>
+    <phoneHome>000</phoneHome>
+    <phoneMobile>110</phoneMobile>
+    <phoneWork>220</phoneWork>
+  </contact>
+  <contact>
+    <firstName>Johnny 1</firstName>
+    <lastName>Robot 1</lastName>
+    <address>Nevsky 1</address>
+    <eMail>john1@mail.ru</eMail>
+    <eMail2>john1@mail.ru2</eMail2>
+    <eMail3>john1@mail.ru3</eMail3>
+    <phoneHome>001</phoneHome>
+    <phoneMobile>111</phoneMobile>
+    <phoneWork>221</phoneWork>
+  </contact>
+  <contact>
+    <firstName>Johnny 2</firstName>
+    <lastName>Robot 2</lastName>
+    <address>Nevsky 2</address>
+    <eMail>john2@mail.ru</eMail>
+    <eMail2>john2@mail.ru2</eMail2>
+    <eMail3>john2@mail.ru3</eMail3>
+    <phoneHome>002</phoneHome>
+    <phoneMobile>112</phoneMobile>
+    <phoneWork>222</phoneWork>
+  </contact>
+</list>
