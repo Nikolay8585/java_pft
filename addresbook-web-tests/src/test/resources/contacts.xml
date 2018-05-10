@@ -35,4 +35,16 @@
     <phoneMobile>112</phoneMobile>
     <phoneWork>222</phoneWork>
   </contact>
+  <contact>
+    <firstName>Johnny 3</firstName>
+    <lastName>Robot 3</lastName>
+    <address>Nevsky 3</address>
+    <eMail>john3@mail.ru</eMail>
+    <eMail2>john3@mail.ru2</eMail2>
+    <eMail3>john3@mail.ru3</eMail3>
+    <group>[none]</group>
+    <phoneHome>003</phoneHome>
+    <phoneMobile>113</phoneMobile>
+    <phoneWork>223</phoneWork>
+  </contact>
 </list>
