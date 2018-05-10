@@ -25,6 +25,7 @@ public class ContactData {
     private String eMail3;
     @Expose
     private String allEMails;
+    @Expose
     private String group;
     @Expose
     private String phoneHome;

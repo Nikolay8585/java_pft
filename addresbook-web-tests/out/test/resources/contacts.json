@@ -6,6 +6,7 @@
     "eMail": "john0@mail.ru",
     "eMail2": "john0@mail.ru2",
     "eMail3": "john0@mail.ru3",
+    "group": "[none]",
     "phoneHome": "000",
     "phoneMobile": "110",
     "phoneWork": "220"
@@ -17,6 +18,7 @@
     "eMail": "john1@mail.ru",
     "eMail2": "john1@mail.ru2",
     "eMail3": "john1@mail.ru3",
+    "group": "[none]",
     "phoneHome": "001",
     "phoneMobile": "111",
     "phoneWork": "221"
@@ -28,6 +30,7 @@
     "eMail": "john2@mail.ru",
     "eMail2": "john2@mail.ru2",
     "eMail3": "john2@mail.ru3",
+    "group": "[none]",
     "phoneHome": "002",
     "phoneMobile": "112",
     "phoneWork": "222"

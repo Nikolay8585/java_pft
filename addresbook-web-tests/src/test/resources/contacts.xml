@@ -6,6 +6,7 @@
     <eMail>john0@mail.ru</eMail>
     <eMail2>john0@mail.ru2</eMail2>
     <eMail3>john0@mail.ru3</eMail3>
+    <group>[none]</group>
     <phoneHome>000</phoneHome>
     <phoneMobile>110</phoneMobile>
     <phoneWork>220</phoneWork>
@@ -17,6 +18,7 @@
     <eMail>john1@mail.ru</eMail>
     <eMail2>john1@mail.ru2</eMail2>
     <eMail3>john1@mail.ru3</eMail3>
+    <group>[none]</group>
     <phoneHome>001</phoneHome>
     <phoneMobile>111</phoneMobile>
     <phoneWork>221</phoneWork>
@@ -28,6 +30,7 @@
     <eMail>john2@mail.ru</eMail>
     <eMail2>john2@mail.ru2</eMail2>
     <eMail3>john2@mail.ru3</eMail3>
+    <group>[none]</group>
     <phoneHome>002</phoneHome>
     <phoneMobile>112</phoneMobile>
     <phoneWork>222</phoneWork>
