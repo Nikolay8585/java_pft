@@ -53,7 +53,7 @@ public class ContactPhoneTests extends TestBase {
     }
 
     public static String cleanedPhone (String phone) {
-        return phone.replaceAll("\\s","").replaceAll("[-()]", "");
+        return phone.replaceAll("\\s","").replaceAll("00", "+").replaceAll("[-()]", "");
     }
 
     public static String cleanedEMail (String eMail) {
