@@ -8,9 +8,12 @@ public class ContactData {
     private String firstName;
     private String lastName;
     private String address;
-    private String phoneHome;
     private String eMail;
+    private String eMail2;
+    private String eMail3;
+    private String allEMails;
     private String group;
+    private String phoneHome;
     private String phoneMobile;
     private String phoneWork;
     private String allPhones;
@@ -62,6 +65,22 @@ public class ContactData {
         return this;
     }
 
+    public ContactData withEMail2(String eMail2) {
+        this.eMail2 = eMail2;
+        return this;
+    }
+
+    public ContactData withEMail3(String eMail3) {
+        this.eMail3 = eMail3;
+        return this;
+    }
+
+    public ContactData withallEMails(String allEMails) {
+        this.allEMails = allEMails;
+        return this;
+    }
+
+
     public ContactData withGroup(String group) {
         this.group = group;
         return this;
@@ -102,6 +121,12 @@ public class ContactData {
 
     public String getEMail() { return eMail;}
 
+    public String getEMail2() { return eMail2;}
+
+    public String getEMail3() { return eMail3;}
+
+    public String getAllEMails() { return allEMails;}
+
     public String getGroup() {
         return group;
     }
@@ -137,8 +162,13 @@ public class ContactData {
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", address='" + address + '\'' +
                 ", eMail='" + eMail + '\'' +
+                ", eMail2='" + eMail2 + '\'' +
+                ", eMail3='" + eMail3 + '\'' +
+                ", allEMails='" + allEMails + '\'' +
+                ", phoneHome='" + phoneHome + '\'' +
+                ", phoneMobile='" + phoneMobile + '\'' +
+                ", phoneWork='" + phoneWork + '\'' +
                 ", allPhones='" + allPhones + '\'' +
                 '}';
     }
