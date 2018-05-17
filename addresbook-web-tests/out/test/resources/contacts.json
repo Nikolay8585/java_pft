@@ -34,17 +34,5 @@
     "phoneHome": "002",
     "phoneMobile": "112",
     "phoneWork": "222"
-  },
-  {
-    "firstName": "Johnny 3",
-    "lastName": "Robot 3",
-    "address": "Nevsky 3",
-    "eMail": "john3@mail.ru",
-    "eMail2": "john3@mail.ru2",
-    "eMail3": "john3@mail.ru3",
-    "group": "[none]",
-    "phoneHome": "003",
-    "phoneMobile": "113",
-    "phoneWork": "223"
   }
 ]
