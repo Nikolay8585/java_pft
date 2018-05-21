@@ -10,7 +10,7 @@ public class DbConnectionTest {
 
 
     @Test
-    public void tetsDbConnection() {
+    public void testsDbConnection() {
         Connection conn = null;
         try {
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/addressbook?serverTimezone=UTC&user=root&password=");
