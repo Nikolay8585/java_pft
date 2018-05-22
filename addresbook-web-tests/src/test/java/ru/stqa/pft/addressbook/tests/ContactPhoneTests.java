@@ -21,7 +21,7 @@ public class ContactPhoneTests extends TestBase {
             app.goTo().addNewPage();
             app.contact().create(
                     new ContactData().withFirstName("Sasha").withLastName("Pushkin")
-                            .withPhoneHome("333").withPhoneWork("+7(812)55-55").withEMail("SP@mail.ru").withGroup("[none]"));
+                            .withPhoneHome("333").withPhoneWork("+7(812)55-55").withEMail("SP@mail.ru"));
             app.goTo().homePage();
         }
     }

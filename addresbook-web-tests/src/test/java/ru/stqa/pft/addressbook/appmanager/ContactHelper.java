@@ -29,7 +29,7 @@ public class ContactHelper extends HelperBase {
 
 
         if (creation) {
-            new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
+           //new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
         } else {
             Assert.assertFalse(isElementPresent(By.name("new_group")));
         }
@@ -88,7 +88,7 @@ public class ContactHelper extends HelperBase {
             String allEMails = element.findElements(By.tagName("td")).get(4).getText();
             String allPhones = element.findElements(By.tagName("td")).get(5).getText();
             contacts.add(new ContactData().withId(id).withFirstName(firstName).withLastName(lastName).withAddress(address)
-            .withallEMails(allEMails).withAllPhones(allPhones));
+            .withAllEMails(allEMails).withAllPhones(allPhones));
         }
         return contacts;
     }

@@ -78,8 +78,7 @@ public class ContactDataGenerator {
                     .withAddress(String.format("Nevsky %s", i))
                     .withPhoneHome(String.format("00%s", i))
                     .withPhoneMobile(String.format("11%s", i))
-                    .withPhoneWork(String.format("22%s", i))
-                    .withGroup("[none]"));
+                    .withPhoneWork(String.format("22%s", i)));
         }
         return contacts;
     }
