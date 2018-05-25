@@ -67,6 +67,13 @@ public class ContactAddToGroupTests extends TestBase {
         }
         GroupData group = groupsBefore.iterator().next();
         Contacts contactsBefore = app.db().contacts();
+        if (contactsBefore.size() == 0) {
+            app.goTo().addNewPage();
+            app.contact().create(new ContactData()
+                    .withFirstName("Vasia").withLastName("Pupkin")
+                    .withPhoneMobile(String.valueOf(System.currentTimeMillis())));
+            contactsBefore = app.db().contacts();
+        }
         ContactData contact = contactsBefore.iterator().next();
         if (contact.getGroups().contains(group)) {
             app.goTo().groupPage();
