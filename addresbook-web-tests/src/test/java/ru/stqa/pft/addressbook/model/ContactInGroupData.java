@@ -8,6 +8,7 @@ import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.io.File;
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -15,12 +16,13 @@ import java.util.Set;
 @Entity
 @Table(name = "address_in_groups")
 @XStreamAlias("contactsInGroup")
-public class ContactInGroupData {
+public class ContactInGroupData implements Serializable {
 
     @Id
     @Column(name = "id")
     private int contactId = 0;
 
+    @Id
     @Column(name = "group_id")
     private int groupId = 0;
 
