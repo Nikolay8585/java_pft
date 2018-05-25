@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.Contacts;
+import ru.stqa.pft.addressbook.model.GroupData;
 
 import java.util.List;
 
@@ -29,7 +30,12 @@ public class ContactHelper extends HelperBase {
 
 
         if (creation) {
-           //new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
+            if (contactData.getGroups().size() > 0) {
+                Assert.assertTrue(contactData.getGroups().size() == 1);
+                new Select(wd.findElement(By.name("new_group")))
+                        .selectByVisibleText(contactData.getGroups().iterator().next().getName());
+            }
+
         } else {
             Assert.assertFalse(isElementPresent(By.name("new_group")));
         }
@@ -43,6 +49,11 @@ public class ContactHelper extends HelperBase {
         wd.findElement(By.cssSelector("input[value='" + id + "']")).click();
     }
 
+    public void selectGroupByName(GroupData group) {
+        new Select(wd.findElement(By.name("to_group"))).selectByVisibleText(group.getName());
+    }
+
+
     public void initContactModification(int id) {
         wd.findElement(By.xpath("//input[@value='" + id + "']/../..//td[8]/a/img")).click();
     }
@@ -53,6 +64,10 @@ public class ContactHelper extends HelperBase {
 
     public void initContactDeletion() {
         click(By.xpath("//div[@id='content']/form[2]/div[2]/input"));
+    }
+
+    public void initGroupSelection() {
+        click(By.name("add"));
     }
 
     public void create(ContactData contact) {
@@ -76,6 +91,13 @@ public class ContactHelper extends HelperBase {
         initContactDeletion();
         allertConfirm();
     }
+
+    public void addToGroup(ContactData contact, GroupData group) {
+        selectContactById(contact.getId());
+        selectGroupByName(group);
+        initGroupSelection();
+    }
+
 
     public Contacts all() {
         Contacts contacts = new Contacts();

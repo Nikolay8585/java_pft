@@ -2,6 +2,9 @@ package ru.stqa.pft.sandbox;
 
 public class MyFirstProgramm {
 	public static void main (String args[]) {
+		int a = 12;
+		System.out.println(a-- - ++a);
+
 		System.out.println("Hello world");
 
 		Point p1 = new Point(1, 1);
@@ -22,6 +25,8 @@ public class MyFirstProgramm {
 		double h = Math.sqrt(Math.pow((p2.x-p1.x), 2)+Math.pow((p2.y-p1.y), 2));
 		return h;
 	}
+
+
 
 
 }

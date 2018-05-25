@@ -25,7 +25,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 public class ContactCreationTests extends TestBase {
 
-    @DataProvider
+   /* @DataProvider
     public Iterator<Object[]> validContactsFromXml() throws IOException {
         try (BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/contacts.xml")))) {
             String xml = "";
@@ -53,11 +53,10 @@ public class ContactCreationTests extends TestBase {
         Gson gson = new Gson();
         List<ContactData> contacts = gson.fromJson(json, new TypeToken<List<ContactData>>(){}.getType());
         return contacts.stream().map((g) -> new Object[] {g}).collect(Collectors.toList()).iterator();
-    }
+    }*/
 
-    @Test (dataProvider = "validContactsFromJson")
+    @Test (dataProvider = "validContactsFromJson", enabled = false)
     public void testContactCreation(ContactData contact) {
-        Groups groups = app.db().groups();
         app.goTo().homePage();
         Contacts before = app.db().contacts();
         /*File photo = new File("src/test/resources/smile.png");
@@ -65,7 +64,7 @@ public class ContactCreationTests extends TestBase {
                 .withFirstName("Sasha").withLastName("Pushkin")
                 .withPhoneHome("333").withEMail("JS@mail.ru").withGroup("[none]").withPhoto(photo);*/
         app.goTo().addNewPage();
-        app.contact().create(contact.inGroup(groups.iterator().next()));
+        app.contact().create(contact);
         app.goTo().homePage();
         Contacts after = app.db().contacts();
         assertThat(after.size(), equalTo(before.size() + 1));
@@ -74,6 +73,5 @@ public class ContactCreationTests extends TestBase {
 
         verifyContactListInUI();
     }
-
 
 }

@@ -34,13 +34,13 @@ public class GroupData {
     @Type(type = "text")
     private String footer;
 
-    public Set<ContactData> getContacts() {
-        return new Contacts(contacts);
-    }
 
     @ManyToMany(mappedBy = "groups")
     private Set<ContactData> contacts = new HashSet<ContactData>();
 
+    public Set<ContactData> getContacts() {
+        return new Contacts(contacts);
+    }
 
 
     public int getId() {

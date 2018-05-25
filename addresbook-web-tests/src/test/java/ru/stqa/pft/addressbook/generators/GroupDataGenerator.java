@@ -27,6 +27,11 @@ public class GroupDataGenerator {
     public  String format;
 
     public static void main(String[] args) throws IOException {
+
+        File currentDir = new File(".");
+        System.out.println(currentDir.getAbsolutePath());
+        //addresbook-web-tests\src\test\resources\groups.json
+
         GroupDataGenerator generator = new GroupDataGenerator();
         JCommander jCommander = new JCommander(generator);
         try {

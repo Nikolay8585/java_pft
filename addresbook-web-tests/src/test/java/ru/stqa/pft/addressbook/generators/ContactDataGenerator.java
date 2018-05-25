@@ -6,7 +6,14 @@ import com.beust.jcommander.ParameterException;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.thoughtworks.xstream.XStream;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.boot.MetadataSources;
+import org.hibernate.boot.registry.StandardServiceRegistry;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.testng.annotations.BeforeClass;
 import ru.stqa.pft.addressbook.model.ContactData;
+import ru.stqa.pft.addressbook.model.GroupData;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -25,7 +32,12 @@ public class ContactDataGenerator {
     @Parameter(names = "-d", description = "Data format")
     public  String format;
 
+    //private SessionFactory sessionFactory;
+
+
+
     public static void main(String[] args) throws IOException {
+
         ContactDataGenerator generator = new ContactDataGenerator();
         JCommander jCommander = new JCommander(generator);
         try {
@@ -69,6 +81,27 @@ public class ContactDataGenerator {
 
     private List<ContactData> generateContacts(int count) {
         List<ContactData> contacts = new ArrayList<ContactData>();
+
+            /*final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
+                    .configure() // configures settings from hibernate.cfg.xml
+                    .build();
+            try {
+                sessionFactory = new MetadataSources( registry ).buildMetadata().buildSessionFactory();
+            }
+            catch (Exception e) {
+                e.printStackTrace();
+                // The registry would be destroyed by the SessionFactory, but we had trouble building the SessionFactory
+                // so destroy it manually.
+                StandardServiceRegistryBuilder.destroy( registry );
+            }
+
+        Session session = sessionFactory.openSession();
+        session.beginTransaction();
+        List<GroupData> result = session.createQuery("from GroupData").list();
+        GroupData group = result.iterator().next();
+        session.getTransaction().commit();
+        session.close();*/
+
         for (int i = 0; i < count; i++) {
             contacts.add(new ContactData().withFirstName(String.format("Johnny %s", i))
                     .withLastName(String.format("Robot %s", i))
