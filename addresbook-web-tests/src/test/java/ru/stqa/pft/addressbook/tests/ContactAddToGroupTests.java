@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.*;
 
 import java.io.File;
+import java.util.Iterator;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -37,8 +38,9 @@ public class ContactAddToGroupTests extends TestBase {
             groups = app.db().groups();
         }
         GroupData myGroup = null;
-        while (groups.iterator().hasNext()) {
-            myGroup = groups.iterator().next();
+        Iterator<GroupData> it = groups.iterator();
+        while (it.hasNext()) {
+            myGroup = it.next();
             if (myGroup.getName().equals(group.getName())) {
                 break;
             };
@@ -54,7 +56,7 @@ public class ContactAddToGroupTests extends TestBase {
     }
 
 
-    @Test(enabled = false)
+    @Test(enabled = true)
     public void testContactAddToGroup2() {
 
         Groups groupsBefore = app.db().groups();
@@ -68,21 +70,21 @@ public class ContactAddToGroupTests extends TestBase {
         ContactData contact = contactsBefore.iterator().next();
         if (contact.getGroups().contains(group)) {
             app.goTo().groupPage();
-            app.group().create(group.withName("test5").withHeader("test5").withFooter("test5"));
+            app.group().create(group.withName("test5" + System.currentTimeMillis()).withHeader("test5").withFooter("test5"));
         }
         app.goTo().homePage();
         app.contact().addToGroup(contact, group);
         app.goTo().homePage();
-        //Groups groupsAfter = app.db().groups();
-        Contacts contactsAfter = app.db().contacts();
-        ContactData myContact = null;
-        while (contactsAfter.iterator().hasNext()) {
-            myContact = contactsAfter.iterator().next();
-            if (myContact.equals(contact)) {
+        Groups groupsAfter = app.db().groups();
+        GroupData myGroup = null;
+        Iterator<GroupData> it = groupsAfter.iterator();
+        while (it.hasNext()) {
+            myGroup = it.next();
+            if (myGroup.getName().equals(group.getName())) {
                 break;
             }
         }
-        assert(myContact != null);
-        assertThat(true, equalTo(myContact.getGroups().contains(group)));
+        assert(myGroup != null);
+        assertThat(true, equalTo(myGroup.getContacts().contains(contact)));
     }
 }
