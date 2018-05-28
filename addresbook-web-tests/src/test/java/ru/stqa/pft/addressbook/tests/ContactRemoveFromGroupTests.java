@@ -13,11 +13,10 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 @Test
-public class ContactDeleteFromGroupTests extends TestBase {
+public class ContactRemoveFromGroupTests extends TestBase {
     public void testContactDeleteFromGroup() {
         ContactData contact = new ContactData();
         Contacts contactsBefore = app.db().contacts();
-        //GroupData group = new GroupData();
         Groups groupsBefore = app.db().groups();
         if (groupsBefore.size() == 0) {
             app.goTo().groupPage();
