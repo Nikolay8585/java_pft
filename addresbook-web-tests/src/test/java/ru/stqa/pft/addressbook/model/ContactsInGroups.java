@@ -27,15 +27,4 @@ public class ContactsInGroups extends ForwardingSet<ContactInGroupData> {
         return delegate;
     }
 
-    /*public Contacts withAdded (ContactData contact) {
-        Contacts contacts = new Contacts(this);
-        contacts.add(contact);
-        return contacts;
-    }
-
-    public Contacts withOut (ContactData contact) {
-        Contacts contacts = new Contacts(this);
-        contacts.remove(contact);
-        return contacts;
-    }*/
 }

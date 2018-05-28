@@ -1,14 +1,8 @@
 package ru.stqa.pft.addressbook.tests;
 
-
-import org.hibernate.AssertionFailure;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.*;
-
-import java.io.File;
 import java.util.Iterator;
-
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 

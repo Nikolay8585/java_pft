@@ -1,17 +1,9 @@
 package ru.stqa.pft.addressbook.model;
 
-
-import com.google.gson.annotations.Expose;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
-import com.thoughtworks.xstream.annotations.XStreamOmitField;
-import org.hibernate.annotations.Type;
-
 import javax.persistence.*;
-import java.io.File;
 import java.io.Serializable;
-import java.util.HashSet;
 import java.util.Objects;
-import java.util.Set;
 
 @Entity
 @Table(name = "address_in_groups")
