@@ -10,7 +10,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class ContactAddToGroupTests extends TestBase {
 
 
-    @Test(enabled = true)
+    @Test()
     public void testContactAddToGroup() {
 
         Groups groupsBefore = app.db().groups();
