@@ -24,5 +24,18 @@
     "phoneMobile": "111",
     "phoneWork": "221",
     "groups": []
+  },
+  {
+    "firstName": "Johnny 2",
+    "lastName": "Robot 2",
+    "address": "Nevsky 2",
+    "eMail": "john2@mail.ru",
+    "eMail2": "john2@mail.ru2",
+    "eMail3": "john2@mail.ru3",
+    "allEMails": "",
+    "phoneHome": "002",
+    "phoneMobile": "112",
+    "phoneWork": "222",
+    "groups": []
   }
 ]

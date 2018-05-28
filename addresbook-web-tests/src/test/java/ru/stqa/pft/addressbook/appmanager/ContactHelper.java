@@ -98,6 +98,14 @@ public class ContactHelper extends HelperBase {
         initGroupSelection();
     }
 
+    public void removeFromGroup(ContactData contact, GroupData group) {
+        new Select(wd.findElement(By.name("group")))
+                .selectByVisibleText(group.getName());
+        selectContactById(contact.getId());
+        click(By.name("remove"));
+
+    }
+
 
     public Contacts all() {
         Contacts contacts = new Contacts();
@@ -131,4 +139,6 @@ public class ContactHelper extends HelperBase {
                 .withPhoneHome(phoneHome).withPhoneMobile(phoneMobile).withPhoneWork(phoneWork);
 
     }
+
+
 }

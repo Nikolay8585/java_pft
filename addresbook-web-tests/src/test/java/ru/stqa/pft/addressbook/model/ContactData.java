@@ -234,14 +234,8 @@ public class ContactData {
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", eMail='" + eMail + '\'' +
-                ", eMail2='" + eMail2 + '\'' +
-                ", eMail3='" + eMail3 + '\'' +
-                ", allEMails='" + allEMails + '\'' +
-                ", phoneHome='" + phoneHome + '\'' +
                 ", phoneMobile='" + phoneMobile + '\'' +
-                ", phoneWork='" + phoneWork + '\'' +
-                ", allPhones='" + allPhones + '\'' +
+                ", groups=" + groups +
                 '}';
     }
 

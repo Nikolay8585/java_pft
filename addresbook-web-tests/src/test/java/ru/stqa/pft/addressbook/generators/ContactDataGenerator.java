@@ -82,26 +82,6 @@ public class ContactDataGenerator {
     private List<ContactData> generateContacts(int count) {
         List<ContactData> contacts = new ArrayList<ContactData>();
 
-            /*final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
-                    .configure() // configures settings from hibernate.cfg.xml
-                    .build();
-            try {
-                sessionFactory = new MetadataSources( registry ).buildMetadata().buildSessionFactory();
-            }
-            catch (Exception e) {
-                e.printStackTrace();
-                // The registry would be destroyed by the SessionFactory, but we had trouble building the SessionFactory
-                // so destroy it manually.
-                StandardServiceRegistryBuilder.destroy( registry );
-            }
-
-        Session session = sessionFactory.openSession();
-        session.beginTransaction();
-        List<GroupData> result = session.createQuery("from GroupData").list();
-        GroupData group = result.iterator().next();
-        session.getTransaction().commit();
-        session.close();*/
-
         for (int i = 0; i < count; i++) {
             contacts.add(new ContactData().withFirstName(String.format("Johnny %s", i))
                     .withLastName(String.format("Robot %s", i))

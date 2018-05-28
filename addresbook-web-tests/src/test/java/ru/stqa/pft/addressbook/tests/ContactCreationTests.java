@@ -25,7 +25,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 public class ContactCreationTests extends TestBase {
 
-   /* @DataProvider
+    @DataProvider
     public Iterator<Object[]> validContactsFromXml() throws IOException {
         try (BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/contacts.xml")))) {
             String xml = "";
@@ -53,9 +53,9 @@ public class ContactCreationTests extends TestBase {
         Gson gson = new Gson();
         List<ContactData> contacts = gson.fromJson(json, new TypeToken<List<ContactData>>(){}.getType());
         return contacts.stream().map((g) -> new Object[] {g}).collect(Collectors.toList()).iterator();
-    }*/
+    }
 
-    @Test (dataProvider = "validContactsFromJson", enabled = false)
+    @Test (dataProvider = "validContactsFromJson", enabled = true)
     public void testContactCreation(ContactData contact) {
         app.goTo().homePage();
         Contacts before = app.db().contacts();

@@ -16,48 +16,8 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class ContactAddToGroupTests extends TestBase {
 
 
-    @Test(enabled = false)
-    public void testContactAddToGroup() {
-
-        Groups groups = app.db().groups();
-        if (groups.size() == 0) {
-            app.goTo().groupPage();
-            app.group().create(new GroupData().withName("test4").withHeader("test4").withFooter("test4"));
-            groups = app.db().groups();
-        }
-        GroupData group = groups.iterator().next();
-        Contacts before = app.db().contacts();
-        ContactData contact = before.iterator().next();
-        ContactInGroupData contactInGroup = new ContactInGroupData()
-                .withContactId(contact.getId())
-                .withGroupId(group.getId());
-        ContactsInGroups beforeContactsInGroups = app.db().contactsInGroups();
-        if (beforeContactsInGroups.contains(contactInGroup)) {
-            app.goTo().groupPage();
-            app.group().create(group.withName("test5").withHeader("test5").withFooter("test5"));
-            groups = app.db().groups();
-        }
-        GroupData myGroup = null;
-        Iterator<GroupData> it = groups.iterator();
-        while (it.hasNext()) {
-            myGroup = it.next();
-            if (myGroup.getName().equals(group.getName())) {
-                break;
-            };
-        }
-        assert(myGroup != null);
-        contactInGroup.withGroupId(myGroup.getId());
-        app.goTo().homePage();
-        app.contact().addToGroup(contact, myGroup);
-        app.goTo().homePage();
-        ContactsInGroups afterContactsInGroups = app.db().contactsInGroups();
-        assertThat(true, equalTo(afterContactsInGroups.contains(contactInGroup)));
-
-    }
-
-
     @Test(enabled = true)
-    public void testContactAddToGroup2() {
+    public void testContactAddToGroup() {
 
         Groups groupsBefore = app.db().groups();
         if (groupsBefore.size() == 0) {
