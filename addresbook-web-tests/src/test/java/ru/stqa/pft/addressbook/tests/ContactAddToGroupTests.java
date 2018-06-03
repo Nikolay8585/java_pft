@@ -46,6 +46,27 @@ public class ContactAddToGroupTests extends TestBase {
             }
         }
         assert(myGroup != null);
-        assertThat(true, equalTo(myGroup.getContacts().contains(contact)));
+        Contacts contactsAfter = app.db().contacts();
+        Iterator<ContactData> contactIterator = contactsAfter.iterator();
+        ContactData myContact = null;
+        while (contactIterator.hasNext()) {
+            myContact = contactIterator.next();
+            if (myContact.getId() == contact.getId()) {
+                break;
+            }
+        }
+        assert(myContact != null);
+        assertThat(myContact.getGroups(), equalTo(contact.inGroup(myGroup).getGroups()));
+        /*Groups groupsAfter = app.db().groups();
+        GroupData myGroup = null;
+        Iterator<GroupData> it = groupsAfter.iterator();
+        while (it.hasNext()) {
+            myGroup = it.next();
+            if (myGroup.getName().equals(group.getName())) {
+                break;
+            }
+        }
+        assert(myGroup != null);
+        assertThat(true, equalTo(myGroup.getContacts().contains(contact)));*/
     }
 }

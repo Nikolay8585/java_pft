@@ -56,6 +56,7 @@ public class ContactRemoveFromGroupTests extends TestBase {
             }
         }
         assert(myContact != null);
-        assertThat(false, equalTo(myContact.getGroups().contains(group)));
+        assertThat(myContact.getGroups(), equalTo(contact.getGroups().withOut(group))); //сверка списка групп контакта после удаления и до удаления
+        //assertThat(false, equalTo(myContact.getGroups().contains(group)));
     }
 }
