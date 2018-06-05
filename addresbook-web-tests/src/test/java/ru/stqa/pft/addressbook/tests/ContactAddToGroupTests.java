@@ -1,6 +1,5 @@
 package ru.stqa.pft.addressbook.tests;
 
-import com.mysql.cj.x.protobuf.MysqlxDatatypes;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.*;
 import java.util.Iterator;
@@ -26,7 +25,7 @@ public class ContactAddToGroupTests extends TestBase {
             app.goTo().addNewPage();
             app.contact().create(new ContactData()
                     .withFirstName("Vasia").withLastName("Pupkin")
-                    .withPhoneMobile(MysqlxDatatypes.Scalar.String.valueOf(System.currentTimeMillis())));
+                    .withPhoneMobile(String.valueOf(System.currentTimeMillis())));
             contactsBefore = app.db().contacts();
         }
         ContactData contact = contactsBefore.iterator().next();
