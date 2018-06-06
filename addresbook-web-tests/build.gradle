@@ -17,6 +17,10 @@ dependencies {
 
 }
 
+test {
+    useTestNG() {}
+}
+
 task testRemote(type: Test) {
     useTestNG {
         suites 'src/test/resources/testing-remote.xml'
