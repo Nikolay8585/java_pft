@@ -1,6 +1,5 @@
 .gradle
 /build/
-/addresbook-web-tests/chromedriver.exe
 /addresbook-web-tests/MicrosoftWebDriver.exe
 
 # Ignore Gradle GUI config
