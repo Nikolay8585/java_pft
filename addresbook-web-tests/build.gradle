@@ -19,6 +19,12 @@ dependencies {
 
 test {
     useTestNG() {}
+    if (project.hasProperty('browser')) {
+        systemProperty 'browser', "${browser}"
+    }
+    if (project.hasProperty('target')) {
+        systemProperty 'target', "${target}"
+    }
 }
 
 task testGroups(type: Test) {
