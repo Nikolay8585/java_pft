@@ -51,7 +51,8 @@ public class ApplicationManager {
 
         } else {
             DesiredCapabilities capabilities = new DesiredCapabilities();
-            capabilities.setBrowserName("firefox");
+            capabilities.setBrowserName(browser);
+            System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
             wd = new RemoteWebDriver(new URL(properties.getProperty("selenium.server")), capabilities);
         }
 
