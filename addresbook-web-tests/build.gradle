@@ -18,7 +18,7 @@ dependencies {
 }
 
 task testRemote(type: Test) {
-    useTestNG() {
+    useTestNG {
         suites 'src/test/resources/testing-remote.xml'
     }
     if (project.hasProperty('browser')) {
