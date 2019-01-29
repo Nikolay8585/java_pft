@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.stqa.pft.addressbook.tests.ContactCreationTests" tests="3" skipped="0" failures="0" errors="0" timestamp="2018-05-10T18:42:58" hostname="MKS" time="13.958">
-  <properties/>
-  <testcase name="testContactCreation[0](ContactData{id=2147483647, firstName='Johnny 0', lastName='Robot 0', eMail='john0@mail.ru', eMail2='john0@mail.ru2', eMail3='john0@mail.ru3', allEMails='null', phoneHome='000', phoneMobile='110', phoneWork='220', allPhones='null'})" classname="ru.stqa.pft.addressbook.tests.ContactCreationTests" time="4.916"/>
-  <testcase name="testContactCreation[1](ContactData{id=2147483647, firstName='Johnny 1', lastName='Robot 1', eMail='john1@mail.ru', eMail2='john1@mail.ru2', eMail3='john1@mail.ru3', allEMails='null', phoneHome='001', phoneMobile='111', phoneWork='221', allPhones='null'})" classname="ru.stqa.pft.addressbook.tests.ContactCreationTests" time="4.181"/>
-  <testcase name="testContactCreation[2](ContactData{id=2147483647, firstName='Johnny 2', lastName='Robot 2', eMail='john2@mail.ru', eMail2='john2@mail.ru2', eMail3='john2@mail.ru3', allEMails='null', phoneHome='002', phoneMobile='112', phoneWork='222', allPhones='null'})" classname="ru.stqa.pft.addressbook.tests.ContactCreationTests" time="4.86"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
