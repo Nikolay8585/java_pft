@@ -1,7 +1,7 @@
 .gradle
 .idea
 *.iml
-/out
+/*/out
 /build/
 /addresbook-web-tests/MicrosoftWebDriver.exe
 
